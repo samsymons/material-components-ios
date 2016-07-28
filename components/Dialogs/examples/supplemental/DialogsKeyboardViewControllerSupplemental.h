@@ -5,7 +5,5 @@
 
 #import <UIKit/UIKit.h>
 
-//@class DialogsTypicalUseViewController;
-
-@interface DialogKeyboardViewController : UIViewController
+@interface DialogsKeyboardViewController : UIViewController
 @end

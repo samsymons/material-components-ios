@@ -14,18 +14,17 @@
  limitations under the License.
  */
 
-#import "DialogsTypicalUseSupplemental.h"
+#import "DialogsKeyboardViewControllerSupplemental.h"
 
-#import "MaterialButtons.h"
 #import "MaterialDialogs.h"
 
-@interface DialogKeyboardViewController ()
+@interface DialogsKeyboardViewController ()
 
 @property(nonatomic, strong) MDCDialogTransitionController *transitionController;
 
 @end
 
-@implementation DialogKeyboardViewController
+@implementation DialogsKeyboardViewController
 
 - (void)viewDidLoad {
   // We must create and store a strong reference to the transitionController.
