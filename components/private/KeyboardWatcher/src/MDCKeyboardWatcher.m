@@ -52,19 +52,19 @@ static MDCKeyboardWatcher *_sKeyboardWatcher;
   self = [super init];
   if (self) {
     [[NSNotificationCenter defaultCenter] addObserver:self
-           selector:@selector(keyboardWillShow:)
-               name:UIKeyboardWillShowNotification
-             object:nil];
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-           selector:@selector(keyboardWillHide:)
-               name:UIKeyboardWillHideNotification
-             object:nil];
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
-           selector:@selector(keyboardWillChangeFrame:)
-               name:UIKeyboardWillChangeFrameNotification
-             object:nil];
+                                             selector:@selector(keyboardWillChangeFrame:)
+                                                 name:UIKeyboardWillChangeFrameNotification
+                                               object:nil];
   }
 
   return self;
@@ -223,16 +223,18 @@ static UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCurve ani
 
 - (void)keyboardWillShow:(NSNotification *)notification {
   [self updateKeyboardOffsetWithKeyboardUserInfo:notification.userInfo];
-  [[NSNotificationCenter defaultCenter] postNotificationName:MDCKeyboardWatcherKeyboardWillShowNotification
-                                                      object:self
-                                                    userInfo:notification.userInfo];
+  [[NSNotificationCenter defaultCenter]
+      postNotificationName:MDCKeyboardWatcherKeyboardWillShowNotification
+                    object:self
+                  userInfo:notification.userInfo];
 }
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
   [self updateKeyboardOffsetWithKeyboardUserInfo:notification.userInfo];
-  [[NSNotificationCenter defaultCenter] postNotificationName:MDCKeyboardWatcherKeyboardWillChangeFrameNotification
-                                                      object:self
-                                                    userInfo:notification.userInfo];
+  [[NSNotificationCenter defaultCenter]
+      postNotificationName:MDCKeyboardWatcherKeyboardWillChangeFrameNotification
+                    object:self
+                  userInfo:notification.userInfo];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -244,9 +246,10 @@ static UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCurve ani
   // screen. As such, we need to take into account the extra knowledge that the keyboard is being
   // hidden, and drive the keyboard offset that way.
   self.keyboardFrame = CGRectZero;
-  [[NSNotificationCenter defaultCenter] postNotificationName:MDCKeyboardWatcherKeyboardWillHideNotification
-                                                      object:self
-                                                    userInfo:notification.userInfo];
+  [[NSNotificationCenter defaultCenter]
+      postNotificationName:MDCKeyboardWatcherKeyboardWillHideNotification
+                    object:self
+                  userInfo:notification.userInfo];
 }
 
 @end

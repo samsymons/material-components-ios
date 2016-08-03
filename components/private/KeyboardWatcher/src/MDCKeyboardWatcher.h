@@ -46,7 +46,7 @@ OBJC_EXTERN NSString *const MDCKeyboardWatcherKeyboardWillChangeFrameNotificatio
 
 /**
  The height of the visible keyboard view.
- 
+
  Zero if the keyboard is not currently showing or is not docked.
  */
 @property(nonatomic, readonly) CGFloat visibleKeyboardHeight;
