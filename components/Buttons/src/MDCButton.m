@@ -225,6 +225,8 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
   _backgroundColors = [NSMutableDictionary dictionary];
   _accessibilityLabelForState = [NSMutableDictionary dictionary];
 
+  self.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+
   // Disable default highlight state.
   self.adjustsImageWhenHighlighted = NO;
   self.showsTouchWhenHighlighted = NO;
@@ -664,6 +666,7 @@ static NSAttributedString *uppercaseAttributedString(NSAttributedString *string)
 - (void)updateTitleColor {
   if (_customTitleColor) {
     [self setTitleColor:_customTitleColor forState:UIControlStateNormal];
+    self.tintColor = _customTitleColor;
     return;
   }
 
